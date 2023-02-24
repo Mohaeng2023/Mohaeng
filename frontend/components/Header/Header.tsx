@@ -3,16 +3,14 @@ import React from "react";
 import styles from "./header.module.css";
 import { BsSearch } from "react-icons/bs";
 import styled from "styled-components";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { openModal } from "@/store/reducers/modalSlice";
 
 const StyledIcon = styled(BsSearch)`
   color: #004aad;
 `;
 
-type Props = {};
-
-function Header({}: Props) {
+function Header() {
   const dispatch = useDispatch();
 
   const handleOpenLoginModal = () => {
@@ -53,6 +51,7 @@ function Header({}: Props) {
             <Link href="#">여행지</Link>
             <Link href="#">코스</Link>
             <Link href="#">동행 게시판</Link>
+            <Link href="/mypage"> 마이페이지</Link>
           </div>
         </div>
       </nav>
