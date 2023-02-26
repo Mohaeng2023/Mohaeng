@@ -35,15 +35,11 @@ const Sidebar = () => {
     <SidebarWrapper>
       <ul>
         <List>
-          <Link href="/user" style={{ textDecoration: "none" }}>
+          <Link href="/mypage" style={{ textDecoration: "none" }}>
             <Button>회원정보</Button>
           </Link>
         </List>
-        <List>
-          <Link href="/user/edit" style={{ textDecoration: "none" }}>
-            <Button>회원정보 수정</Button>
-          </Link>
-        </List>
+
         <List>
           <Link href="/favorites" style={{ textDecoration: "none" }}>
             <Button>즐겨찾기</Button>
