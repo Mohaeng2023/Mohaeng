@@ -19,8 +19,10 @@ export default function RootLayout({
         <Provider store={store}>
           <GlobalModal />
           <Header />
-          {children}
-          <Footer />
+          <div className="wrapper">
+            <div className="contentWrapper">{children}</div>
+            <Footer />
+          </div>
         </Provider>
       </body>
     </html>

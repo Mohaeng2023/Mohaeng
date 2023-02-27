@@ -14,8 +14,8 @@ const Container = styled.div`
 
 const Title = styled.h1`
   text-align: center;
-  margin-bottom: 30px;
-  margin-top: 30px;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
 `;
 
 const ProfileWrapper = styled.div`
@@ -51,7 +51,7 @@ const Email = styled.p`
 const ButtonWrapper = styled.div`
   display: flex;
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
 `;
 
 const MyPage: React.FC = () => {
