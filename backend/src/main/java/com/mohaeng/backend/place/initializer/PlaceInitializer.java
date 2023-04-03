@@ -37,9 +37,12 @@ public class PlaceInitializer {
 //        }
         stopWatch.stop();
         long totalTimeMillis = stopWatch.getTotalTimeMillis();
-        System.out.println("total time : " + totalTimeMillis);
+        System.out.println("total time1 : " + totalTimeMillis);
         placeRepository.saveAll(places);
-        System.out.println("total time : " + totalTimeMillis);
+        placeService.deleteByEmptyFields();
+        System.out.println("total time2 : " + totalTimeMillis);
+
         placeRepository.flush();
+
     }
 }
