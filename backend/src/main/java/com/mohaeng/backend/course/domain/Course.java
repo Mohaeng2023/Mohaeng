@@ -114,15 +114,18 @@ public class Course extends BaseTimeEntity {
         this.likeCount -= 1;
     }
 
-    /** String 타입 날짜를 LocaDateTime으로 변환 **/
-    private static LocalDateTime strToTime (String strDate){
+    /**
+     * String 타입 날짜를 LocaDateTime으로 변환
+     **/
+    private static LocalDateTime strToTime(String strDate) {
         LocalDate date = LocalDate.parse(strDate);
         return date.atStartOfDay();
     }
 
-    /** 코스 공개 비공개 여부 확인 후 Enum 타입으로 변환 **/
-    private static CourseStatus changeStatus(Boolean status){
+    /**
+     * 코스 공개 비공개 여부 확인 후 Enum 타입으로 변환
+     **/
+    private static CourseStatus changeStatus(Boolean status) {
         return status ? CourseStatus.PUBLIC : CourseStatus.PRIVATE;
     }
-
 }
