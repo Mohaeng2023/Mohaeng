@@ -3,7 +3,6 @@ package com.mohaeng.backend.member.domain;
 import com.mohaeng.backend.common.BaseTimeEntity;
 import com.mohaeng.backend.course.domain.CourseBookmark;
 import com.mohaeng.backend.place.domain.PlaceBookmark;
-import com.mohaeng.backend.place.domain.Review;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -54,7 +53,7 @@ public class Member extends BaseTimeEntity {
 
     @OneToMany(mappedBy = "member")
     private List<PlaceBookmark> placeBookmarkList = new ArrayList<>();
-    private List<Review> reviewList;
+//    private List<Review> reviewList;
 
     @Builder
     public Member(String name, String email, Role role, String nickName) {
