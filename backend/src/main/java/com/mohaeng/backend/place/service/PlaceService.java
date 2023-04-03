@@ -7,6 +7,7 @@ import com.mohaeng.backend.place.dto.PlaceDTO;
 import com.mohaeng.backend.place.dto.PlaceDetailsDto;
 import com.mohaeng.backend.place.exception.PlaceNotFoundException;
 import com.mohaeng.backend.place.repository.PlaceRepository;
+import com.querydsl.core.types.Predicate;
 import com.querydsl.core.types.Projections;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
@@ -221,6 +222,16 @@ public class PlaceService {
                 })
                 .collect(Collectors.toList());
         return placeDetailsDtos;
+    }
+
+    public void deleteByEmptyFields() {
+        QPlace place = QPlace.place;
+        Predicate predicate = place.areaCode.isNull().or(place.areaCode.eq(""))
+                .or(place.sigunguCode.isNull()).or(place.sigunguCode.eq(""))
+                .or(place.mapX.eq("0")).or(place.mapX.eq(""))
+                .or(place.mapY.eq("0")).or(place.mapY.eq(""))
+                .or(place.address.isNull()).or(place.address.eq(""));
+        placeRepository.deleteAll(placeRepository.findAll(predicate));
     }
 
 }
