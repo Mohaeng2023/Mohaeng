@@ -7,6 +7,8 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class FindAllReviewResponse {
+
+//    private String title;
     private String memberName;
     private double rating;
     private int likeCount;
@@ -15,6 +17,7 @@ public class FindAllReviewResponse {
 
     public static FindAllReviewResponse of(Review review) {
         return new FindAllReviewResponse(
+//                review.getTitle(),
                 review.getMember().getName(),
                 review.getRating(),
                 review.getLikeCount(),
